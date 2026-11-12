@@ -21,6 +21,16 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.unit.dp
+import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.*
+import androidx.compose.runtime.*
+import androidx.compose.material3.Slider
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.ui.text.input.KeyboardType
+import androidx.compose.ui.tooling.preview.Preview
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,7 +39,9 @@ class MainActivity : ComponentActivity() {
         setContent {
             Lr5Theme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-
+                    TipCalculatorScreen(
+                        modifier = Modifier.padding(innerPadding)
+                    )
                 }
             }
         }
@@ -37,17 +49,17 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
+fun TipCalculatorScreen(
+    modifier: Modifier = Modifier
+) {
 }
+
 
 @Preview(showBackground = true)
 @Composable
-fun GreetingPreview() {
+fun PreviewTipCalculator() {
     Lr5Theme {
-        Greeting("Android")
+        TipCalculatorScreen()
     }
 }
+
