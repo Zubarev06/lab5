@@ -127,6 +127,20 @@ fun TipCalculatorScreen(
                 discount = discount
             )
         }
+        val Amount = orderAmount.toDoubleOrNull() ?: 0.0
+        val discountPercent = discount
+        val amountWithDiscount = Amount * (100 - discountPercent) / 100.0
+        val tipAmount = amountWithDiscount * tipPercentage / 100.0
+        val totalAmount = amountWithDiscount + tipAmount
+
+        Text(text = "Итого к оплате:")
+        OutlinedTextField(
+            value = if (Amount > 0) "%.2f ".format(totalAmount) else "0 ",
+            onValueChange = {},
+            readOnly = true,
+            modifier = Modifier.fillMaxWidth(),
+            label = { Text("Общая сумма с чаевыми") }
+        )
     }
 }
 
