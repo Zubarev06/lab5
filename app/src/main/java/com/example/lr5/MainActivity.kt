@@ -27,10 +27,9 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.material3.Slider
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.ui.text.input.KeyboardType
-import androidx.compose.ui.tooling.preview.Preview
+
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -52,6 +51,19 @@ class MainActivity : ComponentActivity() {
 fun TipCalculatorScreen(
     modifier: Modifier = Modifier
 ) {
+    var orderAmount by remember { mutableStateOf("") }
+    var dishCount by remember { mutableStateOf("") }
+    var tipPercentage by remember { mutableStateOf(0f) }
+
+    Column(
+        modifier = modifier
+            .fillMaxSize()
+            .padding(16.dp)
+            .verticalScroll(rememberScrollState()),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+    }
 }
 
 
